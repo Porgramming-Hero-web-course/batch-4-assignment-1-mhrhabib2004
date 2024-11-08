@@ -1,7 +1,11 @@
 function sumArray(numbers: number[]): number {
-    return numbers.reduce((sum, current) => sum + current, 0);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
   }
-  
-  // Sample Input:
-  console.log(sumArray([1, 2, 3, 4, 5]));
+  return sum;
+}
+
+// Sample Input:
+console.log(sumArray([1, 2, 3, 4, 5]));
   
