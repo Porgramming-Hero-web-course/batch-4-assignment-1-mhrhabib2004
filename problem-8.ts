@@ -1,8 +1,16 @@
-{function validateKeys<A extends object>(obj: A, keys: (keyof A)[]): boolean {
-  return keys.every(key => key in obj);
+{
+  
+  interface Person {
+    name: string;
+    email: string;
+    age: number;
 }
+const person: Person = { name: "Alice", email: "alice@gmail.com", age: 32 }
 
-// Sample Input:
-const person = { name: "Alice", age: 25, email: "alice@example.com" };
-console.log(validateKeys(person, ["name", "age"])); // Sample Output: true
+const validateKeys = <T extends object, K extends keyof T>(obj: T, keys: K[]): boolean => {
+    return keys.every((key) => key in obj);
+};
+
+validateKeys(person, ["name","age"])
+
 }

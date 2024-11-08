@@ -6,6 +6,6 @@ function sumArray(numbers: number[]): number {
   return sum;
 }
 
-// Sample Input:
-console.log(sumArray([1, 2, 3, 4, 5]));
+
+sumArray([1, 2, 3, 4, 5]);
   

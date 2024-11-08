@@ -1,7 +1,13 @@
-function getProperty<A, B extends keyof A>(obj: A, key: B): A[B] {
-  return obj[key];
+interface Person {
+  name: string;
+  age: number;
+}
+const person: Person = {
+  name: "Alice",
+  age: 30
 }
 
-// Sample Input:
-const person = { name: "Alice", age: 30 };
-console.log(getProperty(person, "name")); 
+const getProperty = <T, X extends keyof T>(obj: T, key: X): T[X] => {
+  return obj[key]
+}
+getProperty(person, "name")
